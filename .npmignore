@@ -1,0 +1,9 @@
+src/
+**/*.test.ts
+**/*.spec.ts
+**/__tests__/**
+tsconfig.json
+tsconfig.build.json
+vitest.config.ts
+.tsbuildinfo
+*.tgz

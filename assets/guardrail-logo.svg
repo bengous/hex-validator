@@ -1,0 +1,67 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Perfect hexagonal architecture layers (3 layers) -->
+  <!-- Formula: For center (cx,cy) and radius r, vertices at 60° intervals -->
+  <!-- v0: (cx, cy-r), v1: (cx+r*sin60°, cy-r*cos60°), etc. -->
+  <!-- sin(60°) = 0.866025, cos(60°) = 0.5 -->
+
+  <g id="layers">
+    <!-- Outer layer (infrastructure) r=70 -->
+    <path d="M 100,30 L 160.62,65 L 160.62,135 L 100,170 L 39.38,135 L 39.38,65 Z"
+          fill="none"
+          stroke="#3B82F6"
+          stroke-width="2"
+          opacity="0.5"/>
+
+    <!-- Middle layer (application) r=45 -->
+    <path d="M 100,55 L 138.97,77.5 L 138.97,122.5 L 100,145 L 61.03,122.5 L 61.03,77.5 Z"
+          fill="none"
+          stroke="#3B82F6"
+          stroke-width="2.5"
+          opacity="0.7"/>
+
+    <!-- Inner layer (core/domain) r=25 -->
+    <path d="M 100,75 L 121.65,87.5 L 121.65,112.5 L 100,125 L 78.35,112.5 L 78.35,87.5 Z"
+          fill="#3B82F6"
+          fill-opacity="0.15"
+          stroke="#3B82F6"
+          stroke-width="3"/>
+  </g>
+
+  <!-- Guardrail bars at hexagon vertices -->
+  <g id="guardrails">
+    <!-- Left outer vertical (v4-v5 of outer hex) -->
+    <line x1="39.38" y1="135" x2="39.38" y2="65" stroke="#10B981" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- Left inner vertical (v4-v5 of inner hex) -->
+    <line x1="78.35" y1="112.5" x2="78.35" y2="87.5" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Right inner vertical (v1-v2 of inner hex) -->
+    <line x1="121.65" y1="87.5" x2="121.65" y2="112.5" stroke="#10B981" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Right outer vertical (v1-v2 of outer hex) -->
+    <line x1="160.62" y1="65" x2="160.62" y2="135" stroke="#10B981" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <!-- AI chip icon in the center -->
+  <g id="ai-chip" transform="translate(100, 100)">
+    <!-- Chip body -->
+    <rect x="-10" y="-10" width="20" height="20" rx="2" fill="#0F172A" stroke="#10B981" stroke-width="1.5"/>
+
+    <!-- AI text -->
+    <text x="0" y="5"
+          font-family="Arial, sans-serif"
+          font-size="11"
+          font-weight="bold"
+          fill="#10B981"
+          text-anchor="middle">AI</text>
+
+    <!-- Chip pins extending to inner hexagon -->
+    <line x1="-10" y1="-6" x2="-21.65" y2="-6" stroke="#10B981" stroke-width="1.5"/>
+    <line x1="-10" y1="0" x2="-21.65" y2="0" stroke="#10B981" stroke-width="1.5"/>
+    <line x1="-10" y1="6" x2="-21.65" y2="6" stroke="#10B981" stroke-width="1.5"/>
+
+    <line x1="10" y1="-6" x2="21.65" y2="-6" stroke="#10B981" stroke-width="1.5"/>
+    <line x1="10" y1="0" x2="21.65" y2="0" stroke="#10B981" stroke-width="1.5"/>
+    <line x1="10" y1="6" x2="21.65" y2="6" stroke="#10B981" stroke-width="1.5"/>
+  </g>
+</svg>
