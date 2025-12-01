@@ -1,0 +1,2 @@
+# Marker file to prevent workspace resolution from escaping the fixture
+packages: []
