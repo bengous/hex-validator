@@ -1,0 +1,23 @@
+export { buildPlugin } from './build/build';
+export { drizzleGeneratePlugin } from './db/drizzle';
+export { biomePlugin } from './linters/biome';
+export { aiGuardrailsPlugin } from './rules/ai-guardrails';
+export { architectureFitnessPlugin } from './rules/architecture-fitness';
+export { astAuditPlugin } from './rules/ast-audit';
+export { canonicalStructurePlugin } from './rules/canonical-structure';
+export { compositionPatternsPlugin } from './rules/composition-patterns';
+export { contractTestCoveragePlugin } from './rules/contract-test-coverage';
+export { depCruiserPlugin } from './rules/dep-cruiser';
+export { domainTypesPlugin } from './rules/domain-types';
+export { drizzlePatternsPlugin } from './rules/drizzle-patterns';
+export { entityPatternsPlugin } from './rules/entity-patterns';
+export { mockCoveragePlugin } from './rules/mock-coverage';
+/** @deprecated Use architectureFitnessPlugin + dependency-cruiser preset instead. See ADR-002. */
+export { moduleStructurePlugin } from './rules/module-structure';
+export { resultMonadPlugin } from './rules/result-monad';
+export { rscBoundariesPlugin } from './rules/rsc-boundaries';
+export { serverDirectivesPlugin } from './rules/server-directives';
+export { gitleaksPlugin } from './security/gitleaks';
+export { playwrightPlugin } from './testing/playwright';
+export { vitestPlugin } from './testing/vitest';
+export { tscPlugin } from './ts/tsc';

@@ -1,0 +1,103 @@
+{
+  "name": "hex-validator",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Architecture validator for hexagonal TypeScript projects with 36 dependency-cruiser rules",
+  "author": "Augustin Bengolea <bengous@protonmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengous/hex-validator.git"
+  },
+  "homepage": "https://github.com/bengous/hex-validator#readme",
+  "bugs": {
+    "url": "https://github.com/bengous/hex-validator/issues"
+  },
+  "keywords": [
+    "hexagonal-architecture",
+    "architecture",
+    "validator",
+    "typescript",
+    "dependency-cruiser",
+    "ports-and-adapters",
+    "clean-architecture",
+    "linter"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./validators/*": {
+      "types": "./dist/validators/*.d.ts",
+      "import": "./dist/validators/*.js"
+    }
+  },
+  "bin": {
+    "hex-validate": "dist/cli/cli.js"
+  },
+  "files": [
+    "dist",
+    "configs",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "tsx src/cli/cli.ts --help",
+    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+    "build:watch": "tsc -p tsconfig.build.json --watch",
+    "clean": "rm -rf dist",
+    "lint": "biome check --diagnostic-level=error .",
+    "lint:fix": "biome check --diagnostic-level=error --write .",
+    "type-check": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "pnpm lint && pnpm type-check && pnpm test",
+    "prepublishOnly": "pnpm check && pnpm build",
+    "validate": "tsx src/cli/cli.ts full --scope=full --e2e=off --report=summary",
+    "validate:full": "tsx src/cli/cli.ts full --scope=full --e2e=off --report=summary",
+    "validate:staged": "tsx src/cli/cli.ts fast --scope=staged --e2e=off --report=summary"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.3",
+    "ts-morph": "^27.0.0"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": ">=2",
+    "dependency-cruiser": ">=16",
+    "next": ">=14",
+    "playwright": ">=1",
+    "typescript": ">=5",
+    "vitest": ">=1"
+  },
+  "peerDependenciesMeta": {
+    "playwright": {
+      "optional": true
+    },
+    "vitest": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    },
+    "dependency-cruiser": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.5",
+    "@types/node": "^24.10.1",
+    "dependency-cruiser": "^17.0.1",
+    "tsc-alias": "^1.8.16",
+    "tsx": "^4.20.6",
+    "typescript": "5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
