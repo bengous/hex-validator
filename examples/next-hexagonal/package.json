@@ -8,25 +8,8 @@
     "typecheck": "tsc --noEmit",
     "validate": "hex-validate full --scope=full --e2e=off --report=json"
   },
-  "pnpm": {
-    "overrides": {
-      "@emnapi/runtime": "1.7.1",
-      "@img/colour": "1.0.0",
-      "caniuse-lite": "1.0.30001757",
-      "check-error": "2.1.1",
-      "expect-type": "1.2.2",
-      "next>postcss": "8.4.31",
-      "picomatch": "4.0.3",
-      "rollup": "4.53.3",
-      "semver": "7.7.3",
-      "sharp": "0.34.5",
-      "tinyglobby": "0.2.15",
-      "vite": "7.2.6",
-      "vite>postcss": "8.5.6"
-    }
-  },
   "dependencies": {
-    "next": "16.0.6",
+    "next": "16.2.4",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "server-only": "0.0.1"
